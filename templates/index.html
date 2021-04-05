@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Kharcha kam{% endblock %}
+
+{% block content %}<p align = 'center'>Note: Comparing may take upto 4-5 min depending on your internet speed.<br>
+If you don't see desired output try changing keyword.</p>
+<div><br>
+  <div class="container">
+
+    <p class="mb-5" align  = 'center'>Hello there, Welcome to kharcha kam.<br>
+    We are here to save you some money, just enter the name of product that you want to buy<br>
+  we will search your product on Amazon and flipkart then show them at the same place. </p>
+    <h3 >
+    <form action="#" method="post">
+      <p align='center'>Enter the name of Product:&nbsp &nbsp &nbsp 
+      <input type="text" name="nm" placeholder=""/></h3></p>
+      <h5  align='center'><input type="submit" value="Compare"/></h5>
+    </form>
+    <h2>{{key}}</h2>
+    <div class="table-responsive custom-table-responsive">
+
+      <table class="table custom-table">
+        <thead>
+          <tr>  
+
+            
+            <th scope="col">#</th>
+            <th scope="col">Flipkart product</th>
+            <th scope="col">flipkart price</th>
+            <th scope="col">Amazon product</th>
+            <th scope="col">Amazon price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for value in stocklist%}      
+          <tr scope="row">
+            
+            <td>
+              {{ value[0] }}
+            </td>
+            <td>{{ value[1] }}</td>
+            <td>
+              {{ value[2] }}
+            </td>
+            <td>{{ value[3] }}</td>
+            <td>{{ value[4] }}</td>
+          </tr>
+          {% endfor %}
+          
+          
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  {% endblock %}
